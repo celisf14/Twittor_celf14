@@ -13,7 +13,7 @@ import (
 /*Login realoza el login*/
 func Login(w http.ResponseWriter, r *http.Request) {
 
-	w.Header().Add("content-type", "application/json")
+	w.Header().Add("Content-Type", "application/json")
 
 	var t models.Usuario
 
@@ -47,7 +47,7 @@ func Login(w http.ResponseWriter, r *http.Request) {
 		Token: jwtkey,
 	}
 
-	w.Header().Set("content-type", "application/json")
+	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusCreated)
 	json.NewEncoder(w).Encode(resp)
 
